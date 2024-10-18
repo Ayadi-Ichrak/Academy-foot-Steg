@@ -1,0 +1,137 @@
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blanc: #fff;
+    --clair1: #caf0f8;
+    --clair2: #ade8f4;
+    --clair3: #90e0ef;
+    --bleu1: #48cae4;
+    --bleu2: #00b4d8;
+    --bleu3: #0096c7;
+    --fonce1: #0077b6;
+    --fonce2: #023e8a;
+    --fonce3: #03045e;
+    --bordure: #ccc;
+    --gris1: #888;
+    --gris2: #4e4a4a;
+    --noir: #222;
+    --gold: #b69121;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.navbar{
+    width: 100%;
+    padding: 20px;
+    top: 0;
+    background-color: var(--fonce3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    color: var(--gold);
+
+}
+.logo img{
+    width: 40px;
+    height: 40px;
+}
+.navbar a{
+    padding: 5px;
+    color: var(--fonce3);
+    border: 2px solid var(--blanc);
+    background-color: var(--blanc);
+    border-radius: 10px;
+}
+.navbar a ion-icon{
+    width: 30px;
+    height: 30px;
+
+}
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blanc);
+}
+
+.row{
+    background-color: rgba(0, 128, 0, 0.362);
+    width: 40%;
+    border: 3px solide;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid var(--blanc);
+    border-radius: 20px;
+    background-color: var(--blanc);
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+
+}
+.col-md-6{
+    width: 100%;
+    height: 50%;
+    padding:20px ;
+    color: var(--gris1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+form{
+    width:50% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.col-md-6 form label{
+    font-size: x-large;
+}
+.col-md-6 form input{
+    border: 2px solid #ccc;
+    width: 95%;
+    padding:10px ;
+    color: var(--gris1);
+    margin: 5px auto;
+    border-radius: 5px;
+}
+
+.col-md-6 video{
+    width: 90%;
+    margin: 10px;
+    border-radius: 20px;
+    border: 2px dashed var(--gris1);
+
+}
+.block{
+    width: 40%;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.block img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+  

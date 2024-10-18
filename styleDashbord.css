@@ -1,0 +1,462 @@
+*{
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --blanc:#fff;
+    --clair1:#caf0f8;
+    --clair2:#ade8f4;
+    --clair3:#90e0ef;
+    --bleu1:#48cae4;
+    --bleu2:#00b4d8;
+    --bleu3:#0096c7;
+    --fonce1:#0077b6;
+    --fonce2:#023e8a;
+    --fonce3:#03045e;
+    --bordure:#ccc;
+    --gris1:#888;
+    --gris2:#4e4a4a;
+    --noir:#222;
+    --gold:#b69121;
+}
+body{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    width: 100%;
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color:var(--fonce3) ;
+    border-left:10px solid var(--fonce3) ;
+    transform: 0.5s;
+    overflow: hidden;
+
+}
+.navigation.active{
+    width: 80px;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered{
+    background-color: var(--blanc);
+
+}
+
+
+.navigation ul li:nth-child(1){
+    margin-bottom: 20px; 
+    pointer-events: none;
+
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--blanc);
+
+}
+.navigation ul li:nth-child(1) a{
+    color: var(--gold);
+    margin-top: 10px;
+}
+
+.navigation ul li:hover a,
+.navigation ul li.hovered a{
+    color: var(--fonce3);
+}
+.navigation ul li a img{
+    position: relative;
+    display: block;
+    min-width:60px;
+    height: 60px;
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width:60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+}
+.navigation ul li a .icon ion-icon{
+    font-size:1.57rem ;
+}
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before{
+
+    content: '';
+    position: absolute;
+    right: 0;
+    top:-50px;
+    width: 50px;
+    height: 50px;
+    background-color:transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--blanc);
+    pointer-events:none ;
+
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after{
+
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom:-50px;
+    width: 50px;
+    height: 50px;
+    background-color:transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--blanc);
+    pointer-events:none ;
+
+}
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background-color: var(--blanc);
+    transition: 0.5s;;
+}
+.main.active{
+    width: calc(100% - 80px);
+    left: 80px;
+
+}
+.topbar{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+.search{
+    position: relative;
+    width:400px ;
+    margin:0 10px ;
+}
+.search form{
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+}
+.search form input{
+    width: 100%;
+    height: 40px;
+    border-radius:40px;
+    padding: 5px 20px;
+    padding-left:35px ;
+    font-size:18px;
+    outline: none;
+    border: 1px solid var(--noir);
+}
+.search form ion-icon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 1.2rem;
+
+}
+.user{
+    position: relative;
+    width: 150px;
+    height: 50px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+
+}
+.notification{
+    position: relative;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+
+}
+.notification a{
+    color: var(--gris2);
+}
+.userType select{
+    position: relative;
+    width: 100%;
+    padding: 5px 10px;
+    color: var(--gris1);
+    border: none;
+    border-bottom: 2px solid var(--noir);
+}
+
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+}
+.cardBox a{
+    background-color:var(--blanc);
+    width:100%;
+    text-decoration: none;
+}
+
+.cardBox .card{
+    position: relative;
+    background: var(--blanc);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.cardBox .card .numbers{
+    position: relative;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 2.5rem;
+    color: var(--gold);
+}
+.cardBox .card .cardName{
+    color: var(--gris1);
+    text-decoration: none;
+    font-size:1.1rem ;
+    margin-top: 5px;
+   
+}
+.cardBox .card .iconBox{
+    font-size: 3.5rem;
+    color: var(--gris1);
+}
+
+.cardBox .card:hover{
+    background-color: var(--fonce3);
+
+}
+/*================================ tableau ===============================*/
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.valide {
+    color: green;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.detaille{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr ;
+    grid-gap: 30px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.detaille .affichageTable{
+    position: relative;
+    min-height: 600px;
+    width: 100%;
+    background-color: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+.detaille .cardHeader{
+    display: flex;
+    justify-content:space-between ;
+    align-items: flex-start;
+}
+.cardHeader h2{
+    font-weight:600 ;
+    color: var(--gold);
+}
+.cardHeader .btn{
+    position: relative;
+    padding: 5px 10px;
+    background-color: var(--fonce3);
+    text-decoration: none;
+    color: var(--blanc);
+    border-radius: 6px;
+}
+    
+
+.detaille table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.detaille table thead th{
+    font-weight: 600;
+    color: var(--noir);
+}
+.detaille .affichageTable table tr{
+    color: var(--gris1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.detaille .affichageTable table tr:last-child{
+    border-bottom: none;
+}
+.detaille .affichageTable table tbody tr:hover{
+    background-color: var(--fonce3);
+    color: var(--blanc);
+}
+.detaille .affichageTable table td {
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+}
+
+.detaille .affichageTable table tbody tr td a:first-child {
+    position: relative;
+    padding: 5px;
+    margin: 5px;
+    text-decoration: none;
+    color: var(--gris1);
+    border-radius: 6px;
+}
+.detaille .affichageTable table tbody tr td a ion-icon{
+    position: relative;
+    text-align: center;
+    color: var(--gris1);
+
+}
+.imgBX{
+    width: 40px;
+}
+.imgBX img{
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--bordure);
+}
+
+
+.detaille .affichageTable .cardHeader .formADD{
+    width: 80%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.detaille .affichageTable .cardHeader .formADD label{
+    display: block;
+    margin: 5px;
+    font-weight: 500;
+    color: var(--gris2);
+}
+.detaille .affichageTable .cardHeader .formADD h2{
+
+    margin-bottom: 20px;
+}
+.detaille .affichageTable .cardHeader .formADD input{
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding:10px ;
+    color: var(--gris1);
+    margin: 5px auto;
+    border-radius: 5px;
+}
+.detaille .affichageTable .cardHeader .formADD select{
+    display: block;
+    border: 2px solid #ccc;
+    width: 95%;
+    padding:10px ;
+    color: var(--gris1);
+    margin: 5px auto;
+    border-radius: 5px;
+}
+
+.groupeAjout{
+    width: 95%;
+    margin: 5px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.groupeAjout2{
+    width: 95%;
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.groupeAjout select{
+    padding:10px ;
+    width: 40%;
+    color: var(--gris1);
+    border: 2px solid #ccc;
+    border-radius: 5px;
+
+}
+.groupeAjout button{
+    padding: 5px 10px ;
+    border: 2px solid #ccc;
+    background-color: var(--fonce3);
+    color: var(--blanc);
+    border-radius: 5px;
+
+}
+.groupeAjout2 button{
+    padding: 10px 20px ;
+    border: 2px solid #ccc;
+    background-color: var(--fonce3);
+    color: var(--blanc);
+    border-radius: 5px;
+
+}
+.code_qr{
+    font-size: 15px;
+}
